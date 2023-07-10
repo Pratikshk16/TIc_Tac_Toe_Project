@@ -8,11 +8,11 @@ def display_board(board):
     print("__|__|_")
     print(board[7]+" |"+board[8]+" |"+board[9])
 
-def player_input():
+def player_input():    
     marker = ''
     
     while not (marker == 'X' or marker == 'O'):
-        marker = input('Player 1: Do you want to be X or O? ').upper()
+        marker = input('Player 1: Do you want to be X or O? ').upper()  #Taking Player Input
 
     if marker == 'X':
         return ('X', 'O')
@@ -21,11 +21,11 @@ def player_input():
 
 
 def place_marker(board, marker, position):
-    board[position]= marker
+    board[position]= marker                      #Assigning the Marker to the desired position
 
 
 
-def win_check(board, mark):
+def win_check(board, mark):    #Winning conditions
     if board[1]==mark and board[5]==mark and board[9]==mark:
         return True
     elif board[3]==mark and board[5]==mark and board[7]==mark:
@@ -47,7 +47,7 @@ def win_check(board, mark):
 
 
 
-import random
+import random           #Computer's Turn
 def choose_first():
     if random.randint(1,2)==1:
         return 'Player 1'
@@ -55,7 +55,7 @@ def choose_first():
         return 'Player 2'
 
 
-def space_check(board, position):
+def space_check(board, position):   
     if board[position]=='x' or board[position]=='o':
         return False
     else:
